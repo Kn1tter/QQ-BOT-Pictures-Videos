@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 环境配置
+.env
+
+# 下载的视频缓存
+downloads/
+*.mp4
+*.part
+
+# Cookie（含登录态，切勿上传）
+cookies.txt
+*cookies.txt
+
+# IDE / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
