@@ -13,8 +13,44 @@
 
  目前的缺点是：这个机器人目前依赖NapCat，所以NapCat所支持的QQ版本号是不能变的，否则会失败，意味着你的QQ不能开启自动更新，并且设置了QQ机器人的那个账号需要在电脑上登陆。同时要注意缓存累积，最好不要放在C盘里。
  
+使用教程
 
+一、装基础环境（使用终端命令行）在命令行中输入每一步中文后的代码，或者点击Code下载压缩包一步到位：）
 
+1. 装 Python（3.9+），安装时勾选 "Add to PATH"
+2. 装 ffmpeg（Windows 用 winget）
+winget install Gyan.FFmpeg
+3. 下载本项目代码
+git clone https://github.com/Kn1tter/QQ-BOT-Pictures-Videos.git
+cd QQ-BOT-Pictures-Videos
+4. 装依赖
+pip install -r requirements.txt
+5. 配置（复制一份，默认即可）
+copy .env.example .env
+二、装 QQ + NapCat（最容易踩坑的一步）
+装官方 QQ，版本必须 9.9.31（⚠️ 关键！装太新的 9.9.33 会报 PacketBackend 不支持，NapCat 还没适配）
+去 NapCat Releases 下载 NapCat.Shell.zip（手动版，解压后带 launcher.bat 的那个）
+先手动打开 QQ 登录（要登录你准备当机器人的那个号）
+在 NapCat 目录打开命令行，运行快速登录（带 QQ 号，不扫码，避开风控）：
+
+launcher-user.bat 你的机器人QQ号
+浏览器打开 http://127.0.0.1:6099/webui，配置反向 WebSocket：
+
+ws://127.0.0.1:8080/onebot/v11/ws
+三、启动 + 测试
+
+python bot.py
+看到 Uvicorn running on http://127.0.0.1:8080 就成功了。然后：
+
+给机器人（或它所在的群）发个视频链接
+机器人问「是否要下载？」→ 回「是」→ 下载发视频
+四、三个必看的坑
+坑	说明
+QQ 版本	必须 9.9.31，别升级（NapCat 没适配新版）
+扫码风控	NapCat 自己弹二维码扫码会被风控 → 用「快速登录」（先登录官方 QQ，再 launcher-user.bat）
+抖音限流	抖音走第三方免费接口，会限流（提示「接口繁忙」），等十几分钟再试；B 站不受影响
+
+PS：该过程可由你自己复制给AI处理（在DS高峰期下包含调试在内会收取25左右的人民币，因为我已经搞好了所以只少不多）
 
 
 接下来是AI对该机器人的介绍
@@ -162,3 +198,7 @@ qq-bot/
 ## 📄 许可与声明
 
 本项目仅供个人学习与技术研究使用。请遵守相关平台的服务条款及版权法规，勿用于商业用途或大规模分发受版权保护的内容。
+
+
+
+巧克力又曰：感谢你看到这里，点个Star关注我一下，助力我成为世界最强！
