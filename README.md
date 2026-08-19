@@ -62,12 +62,14 @@ cp .env.example .env
 
 1. 安装官方 QQ（NT 架构，版本 9.9.31）
 2. 下载 [NapCat](https://github.com/NapNeko/NapCatQQ/releases) 的 **Shell 手动版**（`NapCat.Shell.zip`，解压后含 `launcher.bat`）
-3. 先手动打开 QQ 登录，然后运行 NapCat 快速登录：
+3. **不要预先登录 QQ**，直接运行 NapCat 快速登录（`-q` 参数会自动启动 QQ 并快速登录，无需扫码）：
 
    ```bat
    cd NapCat.Shell
    launcher-user.bat <你的QQ号>
    ```
+
+   > ⚠️ 如果预先登录了 QQ，会报「当前账号已登录，无法重复登录」。
 
 4. 打开 NapCat WebUI（`http://127.0.0.1:6099/webui`），配置**反向 WebSocket**：
 
@@ -77,11 +79,15 @@ cp .env.example .env
 
 ### 4. 启动机器人
 
+> ⚠️ **要点开两个组件**：NapCat 和 NoneBot（bot）**都要运行**，机器人才能工作。两个窗口都要保持开启，关掉任何一个都会下线。
+
 ```bash
 python bot.py
 ```
 
 看到 `Uvicorn running on http://127.0.0.1:8080` 即启动成功。
+
+**启动顺序**：先启动 bot（`python bot.py`），再启动 NapCat（快速登录）。NapCat 连不上会自动每 30 秒重试，顺序反了也能自动连上。
 
 ## 📖 使用
 
