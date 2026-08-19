@@ -29,6 +29,7 @@ cd QQ-BOT-Pictures-Videos
 pip install -r requirements.txt
 5. 配置（复制一份，默认即可）
 copy .env.example .env
+
 二、装 QQ + NapCat（最容易踩坑的一步）
 装官方 QQ，版本必须 9.9.31（⚠️ 关键！装太新的 9.9.33 会报 PacketBackend 不支持，NapCat 还没适配）
 去 NapCat Releases 下载 NapCat.Shell.zip（手动版，解压后带 launcher.bat 的那个）
@@ -39,6 +40,7 @@ launcher-user.bat 你的机器人QQ号
 浏览器打开 http://127.0.0.1:6099/webui，配置反向 WebSocket：
 
 ws://127.0.0.1:8080/onebot/v11/ws
+
 三、启动 + 测试
 
 python bot.py
