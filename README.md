@@ -1,4 +1,4 @@
-<img width="1982" height="1091" alt="image" src="https://github.com/user-attachments/assets/23c1b433-def0-48c0-9b3a-297e175051e7" />巧克力曰：
+巧克力曰：
 这是一个能自动检测你发的视频链接或者抖音图文的机器人，并且无视平台用户是否设置了该视频/图文可供下载。
 
 需要准备的是：一个闲置的QQ（防止有被封号的风险，虽然我没有）
@@ -60,6 +60,15 @@ QQ 版本	必须 9.9.31，别升级（NapCat 没适配新版）
 抖音限流	抖音走第三方免费接口，会限流（提示「接口繁忙」），等十几分钟再试；B 站不受影响
 
 PS：该过程可由你自己复制给AI处理（在DS高峰期下包含调试在内会收取25左右的人民币，因为我已经搞好了所以你们所要花费的只少不多）
+
+有如下这两个图片所示的窗口，那么由衷祝贺你成功了😄
+<img width="1982" height="1091" alt="image" src="https://github.com/user-attachments/assets/23c1b433-def0-48c0-9b3a-297e175051e7" />
+![](https://github.com/Kn1tter/images/blob/main/NapCat%E7%A8%8B%E5%BA%8F.png?raw=true)
+
+
+
+
+
 
 
 接下来是AI对该机器人的介绍
@@ -223,7 +232,3 @@ qq-bot/
 
 
 
-有如下这两个图片所示的窗口，那么由衷祝贺你成功了😄
-![这是NapCat窗口](/images/blob/main/NapCat%E7%A8%8B%E5%BA%8F.png)
-![这是机器人窗口](/images/blob/main/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%A8%8B%E5%BA%8F.pnghttps://github.com/Kn1tter/images/blob/main/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%A8%8B%E5%BA%8F.png)
-<img width="1982" height="1091" alt="image" src="https://github.com/user-attachments/assets/23c1b433-def0-48c0-9b3a-297e175051e7" />
