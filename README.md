@@ -20,24 +20,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 使用教程
 
 一、装基础环境（使用终端命令行）在命令行中输入每一步中文后的代码，或者点击Code下载压缩包一步到位：）
@@ -244,3 +226,4 @@ qq-bot/
 有如下这两个图片所示的窗口，那么由衷祝贺你成功了😄
 ![这是NapCat窗口](/images/blob/main/NapCat%E7%A8%8B%E5%BA%8F.png)
 ![这是机器人窗口](/images/blob/main/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%A8%8B%E5%BA%8F.pnghttps://github.com/Kn1tter/images/blob/main/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%A8%8B%E5%BA%8F.png)
+<img width="1982" height="1091" alt="image" src="https://github.com/user-attachments/assets/23c1b433-def0-48c0-9b3a-297e175051e7" />
