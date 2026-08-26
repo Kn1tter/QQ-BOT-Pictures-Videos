@@ -7,7 +7,7 @@ import urllib.parse
 import urllib.request
 
 import yt_dlp
-from nonebot import on_message
+from nonebot import on_keyword, on_message
 from nonebot.adapters.onebot.v11 import Bot, Message, MessageEvent, MessageSegment
 from nonebot.log import logger
 from nonebot.params import ArgPlainText
@@ -144,6 +144,14 @@ async def _send_douyin_images(bot: Bot, data: dict):
     await video_matcher.send(Message(segs))
 
 
+easter_egg = on_keyword("我们还行吧", priority=5, block=True)
+
+
+@easter_egg.handle()
+async def handle_easter_egg():
+    await easter_egg.finish("那当然")
+
+
 video_matcher = on_message(priority=10, block=False)
 
 
@@ -191,6 +199,7 @@ async def _download_and_send(bot: Bot, event: MessageEvent, url: str):
                 "noplaylist": True,
                 "quiet": True,
                 "no_warnings": True,
+                "proxy": "",  # 禁用代理，避免系统残留代理导致连接失败
             }
             if os.path.exists(COOKIE_FILE):
                 ydl_opts["cookiefile"] = COOKIE_FILE
@@ -214,14 +223,14 @@ async def _download_and_send(bot: Bot, event: MessageEvent, url: str):
             await video_matcher.send(
                 f"⚠️ 超过 {MAX_VIDEO_SIZE // 1024 // 1024}MB，已改为发送文件（对方需下载查看）"
             )
-            await video_matcher.send(MessageSegment.file(file=file_uri))
+            await video_matcher.send(MessageSegment("file", {"file": file_uri}))
             return
 
         try:
             await video_matcher.send(MessageSegment.video(file=file_uri))
         except Exception:
             # 视频消息发送失败时，退化为发送文件
-            await video_matcher.send(MessageSegment.file(file=file_uri))
+            await video_matcher.send(MessageSegment("file", {"file": file_uri}))
             await video_matcher.send("（视频消息发送失败，已改为发送文件）")
 
     except Exception as e:

@@ -32,7 +32,7 @@ copy .env.example .env
 二、装 QQ + NapCat（最容易踩坑的一步）
 装官方 QQ，版本必须 9.9.31（⚠️ 关键！装太新的 9.9.33 会报 PacketBackend 不支持，NapCat 还没适配）
 去 NapCat Releases 下载 NapCat.Shell.zip（手动版，解压后带 launcher.bat 的那个）
-先手动打开 QQ 登录（要登录你准备当机器人的那个号）
+不要预先登录 QQ（直接运行下面的快速登录，它会自动启动 QQ 并登录；预先登录会报「无法重复登录」）
 在 NapCat 目录打开命令行，运行快速登录（带 QQ 号，不扫码，避开风控）：
 
 launcher-user.bat 你的机器人QQ号
@@ -49,7 +49,7 @@ python bot.py
 四、三个必看的坑
 坑	说明
 QQ 版本	必须 9.9.31，别升级（NapCat 没适配新版）
-扫码风控	NapCat 自己弹二维码扫码会被风控 → 用「快速登录」（先登录官方 QQ，再 launcher-user.bat）
+扫码风控	NapCat 自己弹二维码扫码会被风控 → 用「快速登录」（不要预先登录 QQ，直接 launcher-user.bat <QQ号>）
 抖音限流	抖音走第三方免费接口，会限流（提示「接口繁忙」），等十几分钟再试；B 站不受影响
 
 PS：该过程可由你自己复制给AI处理（在DS高峰期下包含调试在内会收取25左右的人民币，因为我已经搞好了所以你们所要花费的只少不多）
