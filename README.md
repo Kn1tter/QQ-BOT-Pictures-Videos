@@ -14,7 +14,12 @@
  目前的缺点是：这个机器人目前依赖NapCat，所以NapCat所支持的QQ版本号是不能变的，否则会失败，意味着你的QQ不能开启自动更新，并且设置了QQ机器人的那个账号需要在电脑上登陆。同时要注意缓存累积，最好不要放在C盘里。
  而且这个机器人会识别链接，无论是不是视频链接
  机器人安装成功后，所需的命令行不能关闭，否则会失效，如果发生端口挤占问题需要把所有命令行都关掉，或者直接重启。
- 
+
+ 正确使用机器人需要打开 启动机器人.bat 和 启动NapCat.bat 两个程序
+
+
+
+
 使用教程
 
 一、装基础环境（使用终端命令行）在命令行中输入每一步中文后的代码，或者点击Code下载压缩包一步到位：）
@@ -29,6 +34,7 @@ cd QQ-BOT-Pictures-Videos
 pip install -r requirements.txt
 5. 配置（复制一份，默认即可）
 copy .env.example .env
+
 二、装 QQ + NapCat（最容易踩坑的一步）
 装官方 QQ，版本必须 9.9.31（⚠️ 关键！装太新的 9.9.33 会报 PacketBackend 不支持，NapCat 还没适配）
 去 NapCat Releases 下载 NapCat.Shell.zip（手动版，解压后带 launcher.bat 的那个）
@@ -39,6 +45,7 @@ launcher-user.bat 你的机器人QQ号
 浏览器打开 http://127.0.0.1:6099/webui，配置反向 WebSocket：
 
 ws://127.0.0.1:8080/onebot/v11/ws
+
 三、启动 + 测试
 
 python bot.py
@@ -46,13 +53,22 @@ python bot.py
 
 给机器人（或它所在的群）发个视频链接
 机器人问「是否要下载？」→ 回「是」→ 下载发视频
+
 四、三个必看的坑
-坑	说明
 QQ 版本	必须 9.9.31，别升级（NapCat 没适配新版）
 扫码风控	NapCat 自己弹二维码扫码会被风控 → 用「快速登录」（不要预先登录 QQ，直接 launcher-user.bat <QQ号>）
 抖音限流	抖音走第三方免费接口，会限流（提示「接口繁忙」），等十几分钟再试；B 站不受影响
 
 PS：该过程可由你自己复制给AI处理（在DS高峰期下包含调试在内会收取25左右的人民币，因为我已经搞好了所以你们所要花费的只少不多）
+
+有如下这两个图片所示的窗口，那么由衷祝贺你成功了😄
+<img width="1982" height="1091" alt="image" src="https://github.com/user-attachments/assets/23c1b433-def0-48c0-9b3a-297e175051e7" />
+![](https://github.com/Kn1tter/images/blob/main/NapCat%E7%A8%8B%E5%BA%8F.png?raw=true)
+
+
+
+
+
 
 
 接下来是AI对该机器人的介绍
@@ -210,3 +226,9 @@ qq-bot/
 
 
 巧克力又曰：感谢你看到这里，点个Star关注我一下，助力我成为世界最强！
+
+
+
+
+
+
