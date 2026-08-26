@@ -7,7 +7,7 @@ import urllib.parse
 import urllib.request
 
 import yt_dlp
-from nonebot import on_keyword, on_message
+from nonebot import on_message
 from nonebot.adapters.onebot.v11 import Bot, Message, MessageEvent, MessageSegment
 from nonebot.log import logger
 from nonebot.params import ArgPlainText
@@ -144,19 +144,15 @@ async def _send_douyin_images(bot: Bot, data: dict):
     await video_matcher.send(Message(segs))
 
 
-easter_egg = on_keyword("我们还行吧", priority=5, block=True)
-
-
-@easter_egg.handle()
-async def handle_easter_egg():
-    await easter_egg.finish("那当然")
-
-
 video_matcher = on_message(priority=10, block=False)
 
 
 @video_matcher.handle()
 async def handle_video(bot: Bot, event: MessageEvent, state: T_State):
+    # 彩蛋
+    if event.get_plaintext().strip() == "我们还行吧":
+        await video_matcher.finish("那当然")
+
     urls = _extract_urls(event)
     if not urls:
         await video_matcher.finish()
